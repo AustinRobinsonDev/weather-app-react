@@ -22,14 +22,9 @@ function App() {
   }
 
   const dateBuilder = d => {
-    let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-
-    let day = days[d.getDay()];
-    let date = d.getDate();
-    let month = months[d.getMonth()];
-    let year = d.getFullYear();
-    return `${day} ${date} ${month} ${year}` 
+    let date = String(new window.Date())
+    date = date.slice(3,15)
+    return date; 
   }
   return (
     <div className={(typeof weather.main != "undefined") ? ((weather.main.temp > 16) ? 'app warm' : 'app') : 'app'}>
@@ -43,7 +38,7 @@ function App() {
           onKeyPress={search}
            />
         </div>
-        {weather.message === "city not found" ? <h1 style={{ color: 'white'}}>City not found</h1> : <div></div>}
+        {weather.message === "city not found" ? <h1 style={{ color: 'white', textAlign: 'center'}}>City not found</h1> : <div></div>}
         {(typeof weather.main !== "undefined") ? (
         <div>
           <div className="location-box">
