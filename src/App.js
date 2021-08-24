@@ -26,18 +26,19 @@ function App() {
     date = date.slice(3,15)
     return date; 
   }
+
   return (
-    <div className={(typeof weather.main != "undefined") ? ((weather.main.temp > 16) ? 'app warm' : 'app') : 'app'}>
+    <div className={(typeof weather.main != "undefined") ? ((weather.main.temp > 50) ? 'app warm' : 'app') : 'app'}>
       <main>
-        <div className="search-box">
-          <input type="text"
-          className="search-bar"
-          placeholder='Search..'
-          onChange={e => setQuery(e.target.value)}
-          value={query}
-          onKeyPress={search}
-           />
-        </div>
+      <div className="search-box">
+            <input type="text"
+            className="search-bar"
+            placeholder='Search..'
+            onChange={e => setQuery(e.target.value)}
+            value={query}
+            onKeyPress={search}
+            />
+      </div>
         {weather.message === "city not found" ? <h1 style={{ color: 'white', textAlign: 'center'}}>City not found</h1> : <div></div>}
         {(typeof weather.main !== "undefined") ? (
         <div>
