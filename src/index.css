@@ -9,14 +9,14 @@ body {
 }
 
 .app{
-  background-image: url('./assets/cold-bg.jpeg');
+  background-image: url('./assets/desktop-cold.jpg');
   background-size: cover;
   background-position: bottom;
   transition: 0.4s ease-out;
 }
 
 .app.warm {
-  background-image: url('./assets/warm-bg.jpeg');
+  background-image: url('./assets/desktop-warm.jpg');
 }
 
 main {
@@ -88,4 +88,12 @@ main {
   font-size: 48px;
   font-weight: 700;
   text-shadow: 3px 3px rgba(0,0,0,0.2)
+}/* Mobile Styles */
+@media (max-width: 700px) {
+  .app {
+    background-image: url('./assets/cold-bg.jpeg');
+  }
+  .app.warm {
+    background-image: url('./assets/warm-bg.jpeg');
+  }
 }
